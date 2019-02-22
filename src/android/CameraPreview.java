@@ -89,82 +89,82 @@ public class CameraPreview extends CordovaPlugin implements CameraActivity.Camer
   }
 
   @Override
-  public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+//   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
-    if (START_CAMERA_ACTION.equals(action)) {
-      if (cordova.hasPermission(permissions[0])) {
-        return startCamera(args.getInt(0), args.getInt(1), args.getInt(2), args.getInt(3), args.getString(4), args.getBoolean(5), args.getBoolean(6), args.getBoolean(7), args.getString(8), args.getBoolean(9), args.getBoolean(10), args.getBoolean(11), callbackContext);
-      } else {
-        this.execCallback = callbackContext;
-        this.execArgs = args;
-        cordova.requestPermissions(this, CAM_REQ_CODE, permissions);
-        return true;
-      }
-    } else if (TAKE_PICTURE_ACTION.equals(action)) {
-      return takePicture(args.getInt(0), args.getInt(1), args.getInt(2), callbackContext);
-    } else if (COLOR_EFFECT_ACTION.equals(action)) {
-      return setColorEffect(args.getString(0), callbackContext);
-    } else if (ZOOM_ACTION.equals(action)) {
-      return setZoom(args.getInt(0), callbackContext);
-    } else if (GET_ZOOM_ACTION.equals(action)) {
-      return getZoom(callbackContext);
-    } else if (GET_HFOV_ACTION.equals(action)) {
-      return getHorizontalFOV(callbackContext);
-    } else if (GET_MAX_ZOOM_ACTION.equals(action)) {
-      return getMaxZoom(callbackContext);
-    } else if (PREVIEW_SIZE_ACTION.equals(action)) {
-      return setPreviewSize(args.getInt(0), args.getInt(1), callbackContext);
-    } else if (SUPPORTED_FLASH_MODES_ACTION.equals(action)) {
-      return getSupportedFlashModes(callbackContext);
-    } else if (GET_FLASH_MODE_ACTION.equals(action)) {
-      return getFlashMode(callbackContext);
-    } else if (SET_FLASH_MODE_ACTION.equals(action)) {
-      return setFlashMode(args.getString(0), callbackContext);
-    } else if (STOP_CAMERA_ACTION.equals(action)){
-      return stopCamera(callbackContext);
-    } else if (SHOW_CAMERA_ACTION.equals(action)) {
-      return showCamera(callbackContext);
-    } else if (HIDE_CAMERA_ACTION.equals(action)) {
-      return hideCamera(callbackContext);
-    } else if (TAP_TO_FOCUS.equals(action)) {
-      return tapToFocus(args.getInt(0), args.getInt(1), callbackContext);
-    } else if (SWITCH_CAMERA_ACTION.equals(action)) {
-      return switchCamera(callbackContext);
-    } else if (SUPPORTED_PICTURE_SIZES_ACTION.equals(action)) {
-      return getSupportedPictureSizes(callbackContext);
-    } else if (GET_EXPOSURE_MODES_ACTION.equals(action)) {
-      return getExposureModes(callbackContext);
-    } else if (SUPPORTED_FOCUS_MODES_ACTION.equals(action)) {
-      return getSupportedFocusModes(callbackContext);
-    } else if (GET_FOCUS_MODE_ACTION.equals(action)) {
-      return getFocusMode(callbackContext);
-    } else if (SET_FOCUS_MODE_ACTION.equals(action)) {
-      return setFocusMode(args.getString(0), callbackContext);
-    } else if (GET_EXPOSURE_MODE_ACTION.equals(action)) {
-      return getExposureMode(callbackContext);
-    } else if (SET_EXPOSURE_MODE_ACTION.equals(action)) {
-      return setExposureMode(args.getString(0), callbackContext);
-    } else if (GET_EXPOSURE_COMPENSATION_ACTION.equals(action)) {
-      return getExposureCompensation(callbackContext);
-    } else if (SET_EXPOSURE_COMPENSATION_ACTION.equals(action)) {
-      return setExposureCompensation(args.getInt(0), callbackContext);
-    } else if (GET_EXPOSURE_COMPENSATION_RANGE_ACTION.equals(action)) {
-      return getExposureCompensationRange(callbackContext);
-    } else if (SUPPORTED_WHITE_BALANCE_MODES_ACTION.equals(action)) {
-      return getSupportedWhiteBalanceModes(callbackContext);
-    } else if (GET_WHITE_BALANCE_MODE_ACTION.equals(action)) {
-      return getWhiteBalanceMode(callbackContext);
-    } else if (SET_WHITE_BALANCE_MODE_ACTION.equals(action)) {
-      return setWhiteBalanceMode(args.getString(0),callbackContext);
-    } else if (SET_BACK_BUTTON_CALLBACK.equals(action)) {
-      return setBackButtonListener(callbackContext);
-    } else if (SUPPORTED_COLOR_EFFECTS_ACTION.equals(action)) {
-      return getSupportedColorEffects(callbackContext);
-    } else if (GET_CAMERA_CHARACTERISTICS_ACTION.equals(action)) {
-      return getCameraCharacteristics(callbackContext);
-    }  
-    return false;
-  }
+//     if (START_CAMERA_ACTION.equals(action)) {
+//       if (cordova.hasPermission(permissions[0])) {
+//         return startCamera(args.getInt(0), args.getInt(1), args.getInt(2), args.getInt(3), args.getString(4), args.getBoolean(5), args.getBoolean(6), args.getBoolean(7), args.getString(8), args.getBoolean(9), args.getBoolean(10), args.getBoolean(11), callbackContext);
+//       } else {
+//         this.execCallback = callbackContext;
+//         this.execArgs = args;
+//         cordova.requestPermissions(this, CAM_REQ_CODE, permissions);
+//         return true;
+//       }
+//     } else if (TAKE_PICTURE_ACTION.equals(action)) {
+//       return takePicture(args.getInt(0), args.getInt(1), args.getInt(2), callbackContext);
+//     } else if (COLOR_EFFECT_ACTION.equals(action)) {
+//       return setColorEffect(args.getString(0), callbackContext);
+//     } else if (ZOOM_ACTION.equals(action)) {
+//       return setZoom(args.getInt(0), callbackContext);
+//     } else if (GET_ZOOM_ACTION.equals(action)) {
+//       return getZoom(callbackContext);
+//     } else if (GET_HFOV_ACTION.equals(action)) {
+//       return getHorizontalFOV(callbackContext);
+//     } else if (GET_MAX_ZOOM_ACTION.equals(action)) {
+//       return getMaxZoom(callbackContext);
+//     } else if (PREVIEW_SIZE_ACTION.equals(action)) {
+//       return setPreviewSize(args.getInt(0), args.getInt(1), callbackContext);
+//     } else if (SUPPORTED_FLASH_MODES_ACTION.equals(action)) {
+//       return getSupportedFlashModes(callbackContext);
+//     } else if (GET_FLASH_MODE_ACTION.equals(action)) {
+//       return getFlashMode(callbackContext);
+//     } else if (SET_FLASH_MODE_ACTION.equals(action)) {
+//       return setFlashMode(args.getString(0), callbackContext);
+//     } else if (STOP_CAMERA_ACTION.equals(action)){
+//       return stopCamera(callbackContext);
+//     } else if (SHOW_CAMERA_ACTION.equals(action)) {
+//       return showCamera(callbackContext);
+//     } else if (HIDE_CAMERA_ACTION.equals(action)) {
+//       return hideCamera(callbackContext);
+//     } else if (TAP_TO_FOCUS.equals(action)) {
+//       return tapToFocus(args.getInt(0), args.getInt(1), callbackContext);
+//     } else if (SWITCH_CAMERA_ACTION.equals(action)) {
+//       return switchCamera(callbackContext);
+//     } else if (SUPPORTED_PICTURE_SIZES_ACTION.equals(action)) {
+//       return getSupportedPictureSizes(callbackContext);
+//     } else if (GET_EXPOSURE_MODES_ACTION.equals(action)) {
+//       return getExposureModes(callbackContext);
+//     } else if (SUPPORTED_FOCUS_MODES_ACTION.equals(action)) {
+//       return getSupportedFocusModes(callbackContext);
+//     } else if (GET_FOCUS_MODE_ACTION.equals(action)) {
+//       return getFocusMode(callbackContext);
+//     } else if (SET_FOCUS_MODE_ACTION.equals(action)) {
+//       return setFocusMode(args.getString(0), callbackContext);
+//     } else if (GET_EXPOSURE_MODE_ACTION.equals(action)) {
+//       return getExposureMode(callbackContext);
+//     } else if (SET_EXPOSURE_MODE_ACTION.equals(action)) {
+//       return setExposureMode(args.getString(0), callbackContext);
+//     } else if (GET_EXPOSURE_COMPENSATION_ACTION.equals(action)) {
+//       return getExposureCompensation(callbackContext);
+//     } else if (SET_EXPOSURE_COMPENSATION_ACTION.equals(action)) {
+//       return setExposureCompensation(args.getInt(0), callbackContext);
+//     } else if (GET_EXPOSURE_COMPENSATION_RANGE_ACTION.equals(action)) {
+//       return getExposureCompensationRange(callbackContext);
+//     } else if (SUPPORTED_WHITE_BALANCE_MODES_ACTION.equals(action)) {
+//       return getSupportedWhiteBalanceModes(callbackContext);
+//     } else if (GET_WHITE_BALANCE_MODE_ACTION.equals(action)) {
+//       return getWhiteBalanceMode(callbackContext);
+//     } else if (SET_WHITE_BALANCE_MODE_ACTION.equals(action)) {
+//       return setWhiteBalanceMode(args.getString(0),callbackContext);
+//     } else if (SET_BACK_BUTTON_CALLBACK.equals(action)) {
+//       return setBackButtonListener(callbackContext);
+//     } else if (SUPPORTED_COLOR_EFFECTS_ACTION.equals(action)) {
+//       return getSupportedColorEffects(callbackContext);
+//     } else if (GET_CAMERA_CHARACTERISTICS_ACTION.equals(action)) {
+//       return getCameraCharacteristics(callbackContext);
+//     }  
+//     return false;
+//   }
 
   @Override
   public void onRequestPermissionResult(int requestCode, String[] permissions, int[] grantResults) throws JSONException {
