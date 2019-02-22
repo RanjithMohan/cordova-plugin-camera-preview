@@ -213,18 +213,18 @@ class Preview extends RelativeLayout implements SurfaceHolder.Callback {
     }
   }
 
-  public void surfaceCreated(SurfaceHolder holder) {
-    // The Surface has been created, acquire the camera and tell it where
-    // to draw.
-    try {
-      if (mCamera != null) {
-        mSurfaceView.setWillNotDraw(false);
-        mCamera.setPreviewDisplay(holder);
-      }
-    } catch (Exception exception) {
-      Log.e(TAG, "Exception caused by setPreviewDisplay()", exception);
-    }
-  }
+//   public void surfaceCreated(SurfaceHolder holder) {
+//     // The Surface has been created, acquire the camera and tell it where
+//     // to draw.
+//     try {
+//       if (mCamera != null) {
+//         mSurfaceView.setWillNotDraw(false);
+//         mCamera.setPreviewDisplay(holder);
+//       }
+//     } catch (Exception exception) {
+//       Log.e(TAG, "Exception caused by setPreviewDisplay()", exception);
+//     }
+//   }
 
   public void surfaceDestroyed(SurfaceHolder holder) {
     // Surface will be destroyed when we return, so stop the preview.
